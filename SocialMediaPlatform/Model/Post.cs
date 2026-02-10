@@ -5,6 +5,6 @@ using System.Text;
 namespace SocialMediaPlatform.Model
 {
     internal class Post : BasePost
-    {   public Post(int ownerUserId, string content) : base(ownerUserId, content){}
+    {   public Post(int ownerId, string content) : base(ownerId, content){}
     }
 }
