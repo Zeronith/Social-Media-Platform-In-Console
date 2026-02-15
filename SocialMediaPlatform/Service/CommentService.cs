@@ -5,24 +5,34 @@ namespace SocialMediaPlatform.Service
     internal class CommentService
     {
         private readonly Dictionary<int, Comment> commentById = new();
-        private readonly Dictionary<int, List<Comment>> commentByPostId = new();
-        private readonly Dictionary<int, List<Comment>> commentByOwnerId = new();
+        private readonly Dictionary<int, List<Comment>> commentsByPostId = new();
+        private readonly Dictionary<int, List<Comment>> commentsByOwnerId = new();
 
         public Comment? CreateComment(Comment newComment)
         {
             if (commentById.ContainsKey(newComment.Id)) { return null; }
             commentById.Add(newComment.Id , newComment);
-            if (!commentByPostId.ContainsKey(newComment.PostId))
+            if (!commentsByPostId.ContainsKey(newComment.PostId))
             {
-                commentByPostId[newComment.PostId] = new();
+                commentsByPostId[newComment.PostId] = new();
             }
-            commentByPostId[newComment.PostId].Add(newComment);
-            if (!commentByOwnerId.ContainsKey(newComment.OwnerId))
+            commentsByPostId[newComment.PostId].Add(newComment);
+            if (!commentsByOwnerId.ContainsKey(newComment.OwnerId))
             {
-                commentByOwnerId[newComment.OwnerId] = new();
+                commentsByOwnerId[newComment.OwnerId] = new();
             }
-            commentByOwnerId[newComment.OwnerId].Add(newComment);
+            commentsByOwnerId[newComment.OwnerId].Add(newComment);
             return newComment;
+        }
+
+        internal List<Comment> GetCommentsByPostId(int postId)
+        {
+            if (commentsByPostId.TryGetValue(postId, out List<Comment>? comments))
+            {
+                return comments;
+            }
+
+            return new List<Comment>();
         }
     }
 }

@@ -10,6 +10,7 @@ internal class AuthService
     {
         _userService = userService;
     }
+
     public bool SignUp(string username, string password, int age)
     {
         if (age < 13) return false;
