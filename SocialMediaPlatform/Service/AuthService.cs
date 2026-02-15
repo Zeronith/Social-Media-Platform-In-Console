@@ -18,8 +18,6 @@ internal class AuthService
 
         User newUser = new User(username, password, age);
         _userService.AddUser(newUser);
-
-        CurrentUser = newUser;
         return true;
     }
     public User? Login(string username, string password)

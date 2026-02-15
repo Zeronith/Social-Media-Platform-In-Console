@@ -96,9 +96,23 @@ namespace SocialPlatform
 
         private static void CreatePost()
         {
-            string content = Reader.ReadString("Content:");
-            _ = postSvc.CreatePost(new Post(authSvc.CurrentUser!.Id, content));
-            Console.WriteLine("Post Successfully created");
+            int typeOfPost = Reader.ReadInt("1) Reel\n2) Post");
+            switch (typeOfPost)
+            {
+                case 1:
+                    int durationInSeconds = Reader.ReadInt("Please enter reel duration")
+                    string reelContent = Reader.ReadString("Content:");
+                    _ = postSvc.CreatePost(new Reel(authSvc.CurrentUser!.Id, reelContent, durationInSeconds));
+                    Console.WriteLine("Reel Successfully created");
+                    break;
+                case 2:
+                    string postContent = Reader.ReadString("Content:");
+                    _ = postSvc.CreatePost(new Post(authSvc.CurrentUser!.Id, postContent));
+                    Console.WriteLine("Post Successfully created");
+                    break;
+
+            }
+
         }
 
     }

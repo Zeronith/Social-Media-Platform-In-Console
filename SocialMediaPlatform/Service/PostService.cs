@@ -5,8 +5,8 @@ namespace SocialMediaPlatform.Service
 {
     internal class PostService
     {
-        private readonly Dictionary<int, Post> postById = new();
-        private readonly Dictionary<int, List<Post>> postByOwnerId = new();
+        private readonly Dictionary<int, BasePost> postById = new();
+        private readonly Dictionary<int, List<BasePost>> postByOwnerId = new();
 
         private readonly UserService userSvc;
         private readonly CommentService commentSvc;
@@ -18,30 +18,30 @@ namespace SocialMediaPlatform.Service
             this.commentSvc = commentSvc;
             this.authSvc = authSvc;
         }
-        public Post? CreatePost(Post newPost)
+        public BasePost? CreatePost(BasePost newPost)
         {
             if (postById.ContainsKey(newPost.Id)) return null;
 
             postById.Add(newPost.Id, newPost);
             if (!postByOwnerId.ContainsKey(newPost.OwnerId))
             {
-                postByOwnerId[newPost.OwnerId] = new List<Post>();
+                postByOwnerId[newPost.OwnerId] = new List<BasePost>();
             }
             postByOwnerId[newPost.OwnerId].Add(newPost);
 
             return newPost;
         }
-        public List<Post> GetPostsByUserId(int userId)
+        public List<BasePost> GetPostsByUserId(int userId)
         {
             if (postByOwnerId.TryGetValue(userId, out var posts))
             {
                 return posts;
             }
 
-            return new List<Post>();
+            return new List<BasePost>();
         }
 
-        public Post? GetPostById(int id)
+        public BasePost? GetPostById(int id)
         {
             if (postById.TryGetValue(id , out var posts))
             {
@@ -56,7 +56,8 @@ namespace SocialMediaPlatform.Service
                 Console.WriteLine("Newsfeed is empty like the creater brain");
                 return;
             }
-            foreach (Post post in postById.Values)
+
+            foreach (BasePost post in postById.Values.OrderByDescending(p => p.CreatedAt))
             {
                 bool isContinue = true;
                 Console.WriteLine($"Owner : {userSvc.GetById(post.OwnerId)!.Username} , Posted at : {post.CreatedAt} , Content : {post.Content}");
