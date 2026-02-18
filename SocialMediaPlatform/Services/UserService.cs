@@ -6,29 +6,6 @@ internal class UserService : IUserService
 {
     private readonly Dictionary<int, User> usersById = new();
     private readonly Dictionary<string, User> usersByUsername = new();
-
-
-    private IPostService? postSvc;
-
-    public void SetPostService(IPostService postSvc)
-    {
-        this.postSvc = postSvc;
-    }
-    public void GetMyProfile(int id)
-    {
-        User? user = usersById[id];
-        if (user == null)
-        {
-            return;
-        }
-        Console.WriteLine($"Username : {user.Username}\nAge : {user.Age}\nJoined at : {user.CreatedAt} ");
-        List<BasePost> posts = postSvc!.GetPostsByUserId(user.Id);
-        foreach(Post post in posts)
-        {
-            Console.WriteLine($"Owner : {usersById[post.OwnerId].Username} ,\nPosted at : {post.CreatedAt} , \nContent : {post.Content}");
-        }
-
-    }
     public void AddUser(User user)
     {
         usersById[user.Id] = user;
