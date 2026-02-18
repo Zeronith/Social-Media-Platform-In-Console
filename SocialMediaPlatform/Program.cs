@@ -100,7 +100,7 @@ namespace SocialPlatform
             switch (typeOfPost)
             {
                 case 1:
-                    int durationInSeconds = Reader.ReadInt("Please enter reel duration")
+                    int durationInSeconds = Reader.ReadInt("Please enter reel duration");
                     string reelContent = Reader.ReadString("Content:");
                     _ = postSvc.CreatePost(new Reel(authSvc.CurrentUser!.Id, reelContent, durationInSeconds));
                     Console.WriteLine("Reel Successfully created");

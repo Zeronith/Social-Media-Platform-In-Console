@@ -21,7 +21,7 @@ internal class UserService
             return;
         }
         Console.WriteLine($"Username : {user.Username}\nAge : {user.Age}\nJoined at : {user.CreatedAt} ");
-        List<Post> posts = postSvc!.GetPostsByUserId(user.Id);
+        List<BasePost> posts = postSvc!.GetPostsByUserId(user.Id);
         foreach(Post post in posts)
         {
             Console.WriteLine($"Owner : {usersById[post.OwnerId].Username} ,\nPosted at : {post.CreatedAt} , \nContent : {post.Content}");

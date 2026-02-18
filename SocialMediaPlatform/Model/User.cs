@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SocialMediaPlatform.Helper;
+﻿using SocialMediaPlatform.Helper;
 
 namespace SocialMediaPlatform.Model
 {
