@@ -1,6 +1,7 @@
 ﻿using SocialMediaPlatform.Helper;
 using SocialMediaPlatform.Model;
 using SocialMediaPlatform.Service;
+using SocialMediaPlatform.Services;
 
 namespace SocialPlatform
 {
@@ -10,10 +11,11 @@ namespace SocialPlatform
         static UserService userSvc = new();
         static AuthService authSvc = new(userSvc);
         static PostService postSvc = new(userSvc , commentSvc , authSvc);
+        static ProfileService profileSvc = new(userSvc, postSvc);
+        static NewsFeedService newsFeedSvc = new(postSvc,commentSvc,authSvc,userSvc);
 
         public static void  Main(string[] args)
         {
-            userSvc.SetPostService(postSvc);
             RunApp();
         }
         private static void RunApp()
@@ -87,11 +89,11 @@ namespace SocialPlatform
         }
 
         private static void ScrollNewsFeed() {
-            postSvc.ScrollNewsFeed();
+            newsFeedSvc.ScrollNewsFeed();
         }
         private static void GetMyProfile()
         {
-            userSvc.GetMyProfile(authSvc.CurrentUser!.Id);
+            profileSvc.GetMyProfile(authSvc.CurrentUser!.Id);
         }
 
         private static void CreatePost()

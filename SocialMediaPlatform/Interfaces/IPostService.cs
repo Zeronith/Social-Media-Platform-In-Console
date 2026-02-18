@@ -7,9 +7,11 @@ namespace SocialMediaPlatform.Interfaces
 {
     internal interface IPostService
     {
+        public int NumberOfPosts { get; }
+        public List<BasePost> GetAllPosts();
         public BasePost? CreatePost(BasePost post);
         public BasePost? GetPostById(int id);
         public List<BasePost> GetPostsByUserId(int userId);
-        public void ScrollNewsFeed();
+      
     }
 }

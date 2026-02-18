@@ -29,6 +29,7 @@ namespace SocialMediaPlatform.Services
 
             foreach (var post in posts)
             {
+                Console.WriteLine($"Created by : {userSvc.GetById(post.OwnerId)!.Username}");
                 Console.WriteLine($"Content : {post.Content}");
                 Console.WriteLine($"Created at : {post.CreatedAt}");
             }
