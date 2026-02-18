@@ -1,15 +1,16 @@
-﻿using SocialMediaPlatform.Model;
+﻿using SocialMediaPlatform.Interfaces;
+using SocialMediaPlatform.Model;
 using SocialMediaPlatform.Service;
 
-internal class UserService
+internal class UserService : IUserService
 {
     private readonly Dictionary<int, User> usersById = new();
     private readonly Dictionary<string, User> usersByUsername = new();
 
 
-    private PostService? postSvc;
+    private IPostService? postSvc;
 
-    public void SetPostService(PostService postSvc)
+    public void SetPostService(IPostService postSvc)
     {
         this.postSvc = postSvc;
     }

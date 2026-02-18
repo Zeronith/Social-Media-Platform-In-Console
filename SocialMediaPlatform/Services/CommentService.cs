@@ -1,8 +1,9 @@
-﻿using SocialMediaPlatform.Model;
+﻿using SocialMediaPlatform.Interfaces;
+using SocialMediaPlatform.Model;
 
 namespace SocialMediaPlatform.Service
 {
-    internal class CommentService
+    internal class CommentService : ICommentService
     {
         private readonly Dictionary<int, Comment> commentById = new();
         private readonly Dictionary<int, List<Comment>> commentsByPostId = new();
@@ -25,7 +26,7 @@ namespace SocialMediaPlatform.Service
             return newComment;
         }
 
-        internal List<Comment> GetCommentsByPostId(int postId)
+        public List<Comment> GetCommentsByPostId(int postId)
         {
             if (commentsByPostId.TryGetValue(postId, out List<Comment>? comments))
             {

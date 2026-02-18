@@ -1,18 +1,19 @@
 ﻿using SocialMediaPlatform.Helper;
+using SocialMediaPlatform.Interfaces;
 using SocialMediaPlatform.Model;
 
 namespace SocialMediaPlatform.Service
 {
-    internal class PostService
+    internal class PostService : IPostService
     {
         private readonly Dictionary<int, BasePost> postById = new();
         private readonly Dictionary<int, List<BasePost>> postByOwnerId = new();
 
-        private readonly UserService userSvc;
-        private readonly CommentService commentSvc;
-        private readonly AuthService authSvc;
+        private readonly IUserService userSvc;
+        private readonly ICommentService commentSvc;
+        private readonly IAuthService authSvc;
 
-        public PostService(UserService userSvc , CommentService commentSvc , AuthService authSvc)
+        public PostService(IUserService userSvc , ICommentService commentSvc , IAuthService authSvc)
         {
             this.userSvc = userSvc;
             this.commentSvc = commentSvc;
@@ -53,7 +54,7 @@ namespace SocialMediaPlatform.Service
         {
             if (postById.Values.Count == 0)
             {
-                Console.WriteLine("Newsfeed is empty like the creater brain");
+                Console.WriteLine("Newsfeed is empty like the enguunbayar's brain");
                 return;
             }
 

@@ -1,12 +1,13 @@
-﻿using SocialMediaPlatform.Model;
+﻿using SocialMediaPlatform.Interfaces;
+using SocialMediaPlatform.Model;
 
 
-internal class AuthService
+internal class AuthService : IAuthService
 {
-    private readonly UserService _userService;
-    public User? CurrentUser { get; private set; }
+    private readonly IUserService _userService;
+    public User? CurrentUser { get;  set; }
 
-    public AuthService(UserService userService)
+    public AuthService(IUserService userService)
     {
         _userService = userService;
     }
