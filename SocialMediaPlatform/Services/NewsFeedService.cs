@@ -7,7 +7,7 @@ using SocialMediaPlatform.Model;
 
 namespace SocialMediaPlatform.Services
 {
-    internal class NewsFeedService
+    internal class NewsFeedService : INewsFeedService
     {
         private readonly IPostService postSvc;
         private readonly ICommentService commentSvc;
