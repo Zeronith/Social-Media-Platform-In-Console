@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialMediaPlatform.Helper
+namespace SocialMediaPlatform.Helpers
 {
     internal class Reader
     {
@@ -34,5 +34,3 @@ namespace SocialMediaPlatform.Helper
         }
     }
 }
-
-

@@ -20,7 +20,7 @@ namespace SocialMediaPlatform.Services
         {
             var user = userSvc.GetById(id);
             if (user == null) return;
-
+            Console.WriteLine("_____MY PROFILE_____");
             Console.WriteLine($"Username : {user.Username}");
             Console.WriteLine($"Age : {user.Age}");
             Console.WriteLine($"Joined at : {user.CreatedAt}");

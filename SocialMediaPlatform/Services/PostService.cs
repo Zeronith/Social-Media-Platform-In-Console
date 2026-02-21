@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualBasic;
-using SocialMediaPlatform.Helper;
+using SocialMediaPlatform.Helpers;
 using SocialMediaPlatform.Interfaces;
 using SocialMediaPlatform.Model;
 

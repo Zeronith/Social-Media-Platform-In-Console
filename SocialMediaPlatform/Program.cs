@@ -1,4 +1,4 @@
-﻿using SocialMediaPlatform.Helper;
+﻿using SocialMediaPlatform.Helpers;
 using SocialMediaPlatform.Model;
 using SocialMediaPlatform.Service;
 using SocialMediaPlatform.Services;
@@ -10,9 +10,10 @@ namespace SocialPlatform
         static CommentService commentSvc = new();
         static UserService userSvc = new();
         static AuthService authSvc = new(userSvc);
+        static ReactionService reactionSvc = new(authSvc);
         static PostService postSvc = new(userSvc , commentSvc , authSvc);
         static ProfileService profileSvc = new(userSvc, postSvc);
-        static NewsFeedService newsFeedSvc = new(postSvc,commentSvc,authSvc,userSvc);
+        static NewsFeedService newsFeedSvc = new(postSvc,commentSvc,authSvc,userSvc, reactionSvc);
 
         public static void  Main(string[] args)
         {
