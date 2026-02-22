@@ -23,7 +23,7 @@ namespace SocialPlatform
         {
             while(true)
             {
-                Console.WriteLine("WELCOME TO THE NOBOOK");
+                Console.WriteLine("_____WELCOME TO THE NOBOOK_____");
                 Console.WriteLine("1) Login");
                 Console.WriteLine("2) Signup");
                 Console.WriteLine("0) Exit");
@@ -31,7 +31,10 @@ namespace SocialPlatform
                 int choice = int.Parse(Console.ReadLine()!);
                 switch (choice)
                 {
-                    case 1 :
+                    case 0:
+                        Console.WriteLine("Thank you for using NoBook");
+                        return;
+                    case 1:
                         HandleLogin();
                         break;
                     case 2:
@@ -56,10 +59,7 @@ namespace SocialPlatform
                 return;
             }
             Console.WriteLine($"Logged in as {user.Username}");
-            while (true)
-            {
-                ShowMenu();
-            }
+            while (ShowMenu()){}
         }
         static void HandleSignup()
         {
@@ -70,23 +70,31 @@ namespace SocialPlatform
             bool ok = authSvc.SignUp(username, password, age);
             Console.WriteLine(ok ? "Signup successful." : "Signup failed.");
         }
-        static void ShowMenu()
+        static bool ShowMenu()
         {
-            int choice = Reader.ReadInt("1) My Profile \n2) Scroll NewsFeed \n3) Create Post ");
+            int choice = Reader.ReadInt("1) My Profile \n2) Scroll NewsFeed \n3) Create Post \n4) Log Out\n");
             switch(choice)
             {
                 case 1:
                     GetMyProfile();
-                    break;
+                    return true;
                 case 2:
                     ScrollNewsFeed();
-                    break;
+                    return true;
                 case 3:
                     CreatePost();
-                    break;
+                    return true;
+                case 4:
+                    LogOut();
+                    return false;
                 default:
-                    break;
+                    return true;
             }
+        }
+
+        private static void LogOut()
+        {
+            authSvc.CurrentUser = null;
         }
 
         private static void ScrollNewsFeed() {
@@ -99,12 +107,12 @@ namespace SocialPlatform
 
         private static void CreatePost()
         {
-            int typeOfPost = Reader.ReadInt("1) Reel\n2) Post");
+            int typeOfPost = Reader.ReadInt("1) Reel\n2) Post \n");
             switch (typeOfPost)
             {
                 case 1:
-                    int durationInSeconds = Reader.ReadInt("Please enter reel duration");
-                    string reelContent = Reader.ReadString("Content:");
+                    int durationInSeconds = Reader.ReadInt("Please enter reel duration :");
+                    string reelContent = Reader.ReadString("Content: ");
                     _ = postSvc.CreatePost(new Reel(authSvc.CurrentUser!.Id, reelContent, durationInSeconds));
                     Console.WriteLine("Reel Successfully created");
                     break;

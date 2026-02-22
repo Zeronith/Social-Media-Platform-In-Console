@@ -36,11 +36,11 @@ namespace SocialMediaPlatform.Services
                 Console.WriteLine($"\nOwner : {userSvc.GetById(post.OwnerId)!.Username} , \nPosted at : {post.CreatedAt} , \nReaction Count : {reactionSvc.GetReactionsByPostId(post.Id).Count} , \nContent : {post.Content}");
                 while (isContinue)
                 {
-                    int choice = Reader.ReadInt("\n1) React to the post \n2) See the comments \n3) Write comments \n4) See next post");
+                    int choice = Reader.ReadInt("\n1) React to the post \n2) See the comments \n3) Write comments \n4) See next post \n5) Exit from newsfeed\n");
                     switch (choice)
                     {
                         case 1:
-                            int reactionChoice = Reader.ReadInt("\n1) LIKE \n2) LOVE \n3) HAHA \n4) CARE \n5) WOW \n6) SAD \n7) ANGRY");
+                            int reactionChoice = Reader.ReadInt("\n1) LIKE \n2) LOVE \n3) HAHA \n4) CARE \n5) WOW \n6) SAD \n7) ANGRY\n");
                             reactionSvc.ReactToThePost(post.Id, Reaction.IntToReaction[reactionChoice]) ;
                             break;
                         case 2:
@@ -52,13 +52,15 @@ namespace SocialMediaPlatform.Services
                             }
                             break;
                         case 3:
-                            string content = Reader.ReadString("Please enter your comment");
+                            string content = Reader.ReadString("\nPlease write your comment\n");
                             _ = commentSvc.CreateComment(new Comment(authSvc.CurrentUser!.Id, post.Id, content));
                             Console.WriteLine("Successfully added comments");
                             break;
                         case 4:
                             isContinue = false;
                             break;
+                        case 5:
+                            return;
                         default:
                             break;
                     }

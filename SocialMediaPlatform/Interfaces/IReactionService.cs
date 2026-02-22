@@ -9,7 +9,7 @@ namespace SocialMediaPlatform.Interfaces
     {
         public void ReactToThePost(int postId, ReactionType reaction);
         public ReactionType? GetReactionByPostIdAndUserId(int postId, int userId);
-        public Dictionary<int ,ReactionType> GetReactionsByPostId(int postId);
-        public Dictionary<int ,ReactionType> GetReactionsByUserId(int userId);
+        public Dictionary<int, ReactionType> GetReactionsByPostId(int postId);
+        public Dictionary<int, ReactionType> GetReactionsByUserId(int userId);
     }
 }
