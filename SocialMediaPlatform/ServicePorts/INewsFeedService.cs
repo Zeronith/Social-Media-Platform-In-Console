@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialMediaPlatform.Interfaces
+namespace SocialMediaPlatform.ServicePorts
 {
     internal interface INewsFeedService
     {

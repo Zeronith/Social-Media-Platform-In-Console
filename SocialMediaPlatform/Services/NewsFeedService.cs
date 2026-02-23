@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.Interfaces;
+using SocialMediaPlatform.ServicePorts;
 using SocialMediaPlatform.Model;
 
 namespace SocialMediaPlatform.Services

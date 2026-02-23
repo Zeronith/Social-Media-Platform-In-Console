@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.Interfaces;
+using SocialMediaPlatform.ServicePorts;
 using SocialMediaPlatform.Model;
 
 namespace SocialMediaPlatform.Service

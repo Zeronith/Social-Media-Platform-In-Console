@@ -1,5 +1,6 @@
-﻿using SocialMediaPlatform.Interfaces;
+﻿
 using SocialMediaPlatform.Model;
+using SocialMediaPlatform.ServicePorts;
 
 
 internal class AuthService : IAuthService

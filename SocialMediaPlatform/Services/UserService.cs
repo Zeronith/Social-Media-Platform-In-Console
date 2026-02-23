@@ -1,4 +1,4 @@
-﻿using SocialMediaPlatform.Interfaces;
+﻿using SocialMediaPlatform.ServicePorts;
 using SocialMediaPlatform.Model;
 using SocialMediaPlatform.Service;
 

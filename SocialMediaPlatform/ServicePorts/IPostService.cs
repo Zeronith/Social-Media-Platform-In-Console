@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SocialMediaPlatform.Model;
 
-namespace SocialMediaPlatform.Interfaces
+namespace SocialMediaPlatform.ServicePorts
 {
     internal interface IPostService
     {

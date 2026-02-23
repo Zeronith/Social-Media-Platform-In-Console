@@ -4,7 +4,7 @@ using System.Text;
 using SocialMediaPlatform.Model;
 using SocialMediaPlatform.Service;
 
-namespace SocialMediaPlatform.Interfaces
+namespace SocialMediaPlatform.ServicePorts
 {
     internal interface IUserService
     {

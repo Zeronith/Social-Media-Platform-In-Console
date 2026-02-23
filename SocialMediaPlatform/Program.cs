@@ -2,7 +2,6 @@
 using SocialMediaPlatform.Model;
 using SocialMediaPlatform.Service;
 using SocialMediaPlatform.Services;
-
 namespace SocialPlatform
 {
     class Program

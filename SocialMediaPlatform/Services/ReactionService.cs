@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using SocialMediaPlatform.Interfaces;
+using SocialMediaPlatform.ServicePorts;
 using SocialMediaPlatform.Model;
 
 namespace SocialMediaPlatform.Services
