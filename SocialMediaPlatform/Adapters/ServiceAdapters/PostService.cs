@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualBasic;
 using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.ServicePorts;
-using SocialMediaPlatform.Model;
+using SocialMediaPlatform.Models.Abstract;
+using SocialMediaPlatform.Ports.ServicePorts;
 
-namespace SocialMediaPlatform.Service
+namespace SocialMediaPlatform.Adapters.ServiceAdapters
 {
     internal class PostService : IPostService
     {

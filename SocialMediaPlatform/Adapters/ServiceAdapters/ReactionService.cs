@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using SocialMediaPlatform.ServicePorts;
-using SocialMediaPlatform.Model;
+using SocialMediaPlatform.Models.Concrete;
+using SocialMediaPlatform.Ports.ServicePorts;
 
-namespace SocialMediaPlatform.Services
+namespace SocialMediaPlatform.Adapters.ServiceAdapters
 {
     internal class ReactionService : IReactionService
     {

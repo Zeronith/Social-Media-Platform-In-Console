@@ -1,6 +1,6 @@
-﻿using SocialMediaPlatform.ServicePorts;
-using SocialMediaPlatform.Model;
-using SocialMediaPlatform.Service;
+﻿using SocialMediaPlatform.Service;
+using SocialMediaPlatform.Ports.ServicePorts;
+using SocialMediaPlatform.Models.Concrete;
 
 internal class UserService : IUserService
 {

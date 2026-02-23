@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.ServicePorts;
-using SocialMediaPlatform.Model;
+using SocialMediaPlatform.Models.Abstract;
+using SocialMediaPlatform.Models.Concrete;
+using SocialMediaPlatform.Ports.ServicePorts;
 
-namespace SocialMediaPlatform.Services
+namespace SocialMediaPlatform.Adapters.ServiceAdapters
 {
     internal class NewsFeedService : INewsFeedService
     {

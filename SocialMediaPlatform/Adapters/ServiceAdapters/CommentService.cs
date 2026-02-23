@@ -1,7 +1,7 @@
-﻿using SocialMediaPlatform.ServicePorts;
-using SocialMediaPlatform.Model;
+﻿using SocialMediaPlatform.Models.Concrete;
+using SocialMediaPlatform.Ports.ServicePorts;
 
-namespace SocialMediaPlatform.Service
+namespace SocialMediaPlatform.Adapters.ServiceAdapters
 {
     internal class CommentService : ICommentService
     {

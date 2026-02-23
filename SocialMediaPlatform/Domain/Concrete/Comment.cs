@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SocialMediaPlatform.Helper;
+﻿using SocialMediaPlatform.Helper;
 
-namespace SocialMediaPlatform.Model
+namespace SocialMediaPlatform.Models.Concrete
 {
     internal class Comment
     {

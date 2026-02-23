@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using SocialMediaPlatform.Helper;
 
-namespace SocialMediaPlatform.Model
+namespace SocialMediaPlatform.Models.Abstract
 {
     internal abstract class BasePost
     {

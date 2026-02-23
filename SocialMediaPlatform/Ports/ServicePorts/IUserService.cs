@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SocialMediaPlatform.Model;
+using SocialMediaPlatform.Models.Concrete;
 using SocialMediaPlatform.Service;
 
-namespace SocialMediaPlatform.ServicePorts
+namespace SocialMediaPlatform.Ports.ServicePorts
 {
     internal interface IUserService
     {

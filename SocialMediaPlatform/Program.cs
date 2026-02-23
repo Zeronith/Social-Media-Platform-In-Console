@@ -1,7 +1,6 @@
-﻿using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.Model;
-using SocialMediaPlatform.Service;
-using SocialMediaPlatform.Services;
+﻿using SocialMediaPlatform.Adapters.ServiceAdapters;
+using SocialMediaPlatform.Helpers;
+using SocialMediaPlatform.Models.Concrete;
 namespace SocialPlatform
 {
     class Program

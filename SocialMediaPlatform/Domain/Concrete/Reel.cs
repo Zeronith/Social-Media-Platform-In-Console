@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SocialMediaPlatform.Models.Abstract;
 
-namespace SocialMediaPlatform.Model
+namespace SocialMediaPlatform.Models.Concrete
 {
     internal class Reel : BasePost
     {

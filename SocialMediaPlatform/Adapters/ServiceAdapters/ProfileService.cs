@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SocialMediaPlatform.ServicePorts;
 using SocialMediaPlatform.Model;
+using SocialMediaPlatform.Ports.ServicePorts;
 
-namespace SocialMediaPlatform.Services
+namespace SocialMediaPlatform.Adapters.ServiceAdapters
 {
     internal class ProfileService
     {
