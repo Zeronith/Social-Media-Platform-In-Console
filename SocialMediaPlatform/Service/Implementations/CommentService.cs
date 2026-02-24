@@ -14,7 +14,7 @@ namespace SocialMediaPlatform.Service.UseCases
         /// CommentById.
         /// comment.Id → Comment.
         /// Давхардсан Id-г хурдан шалгах, comment-ийг id-оор шууд авах зориулалттай.
-        ///// </summary>
+        /// </summary>
         private readonly Dictionary<int, Comment> commentById = new();
         /// <summary>
         /// CommentsByPostId.

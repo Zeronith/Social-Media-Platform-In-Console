@@ -38,7 +38,7 @@ internal class AuthService : IAuthService
     }
     /// <summary>
     /// Өгөгдсөн username болон password ашиглан хэрэглэгчийг нэвтрүүлэхийг оролдоно.
-    /// </summary
+    /// </summary>
     /// <param name="username">
     /// Нэвтрэх гэж буй хэрэглэгчийн username. null байж болохгүй.
     /// </param>
