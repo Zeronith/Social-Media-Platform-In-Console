@@ -14,9 +14,9 @@ namespace SocialPlatform
 
         static CommentService commentSvc = new();
         static UserService userSvc = new(userRepo);
+        static PostService postSvc = new(postRepo);
         static AuthService authSvc = new(userSvc , authRepo);
         static ReactionService reactionSvc = new(authSvc, reactRepo);
-        static PostService postSvc = new(userSvc , commentSvc , authSvc , postRepo);
         static ProfileService profileSvc = new(userSvc, postSvc);
         static NewsFeedService newsFeedSvc = new(postSvc,commentSvc,authSvc,userSvc, reactionSvc);
 
