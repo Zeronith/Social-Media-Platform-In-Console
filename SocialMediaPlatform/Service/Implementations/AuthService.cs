@@ -60,7 +60,10 @@ internal class AuthService : IAuthService
     {
         return _authRepo.CurrentUser;
     }
-
+    /// <summary>
+    /// Нэвтэрсэний дараа хэрэглэгчийг тохируулна . 
+    /// </summary>
+    /// <param name="user"></param>
     public void SetCurrentUser(User? user)
     {
         _authRepo.CurrentUser = user;

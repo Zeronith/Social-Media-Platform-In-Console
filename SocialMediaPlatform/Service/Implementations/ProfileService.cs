@@ -45,29 +45,15 @@ namespace SocialMediaPlatform.Service.UseCases
         /// <param name="id">Profile харах хэрэглэгчийн Id.</param>
         public void GetMyProfile(int id)
         {
-            /// <summary>
-            /// Хэрэглэгчийг Id-аар авна.
-            /// Хэрэв байхгүй бол method зогсоно.
-            /// </summary>
             var user = userSvc.GetById(id);
             if (user == null) return;
 
-            /// <summary>
-            /// Profile үндсэн мэдээллийг хэвлэнэ.
-            /// </summary>
             Console.WriteLine("_____MY PROFILE_____");
             Console.WriteLine($"Username : {user.Username}");
             Console.WriteLine($"Age : {user.Age}");
             Console.WriteLine($"Joined at : {user.CreatedAt}");
 
-            /// <summary>
-            /// Тухайн хэрэглэгчийн бүх постуудыг авна.
-            /// </summary>
             var posts = postSvc.GetPostsByUserId(id);
-
-            /// <summary>
-            /// Пост бүрийн мэдээллийг хэвлэнэ.
-            /// </summary>
             foreach (var post in posts)
             {
                 Console.WriteLine($"Created by : {userSvc.GetById(post.OwnerId)!.Username}");

@@ -86,14 +86,8 @@ namespace SocialMediaPlatform.Service.UseCases
         /// <param name="reaction">Reaction төрөл.</param>
         public void ReactToThePost(int postId, ReactionType reaction)
         {
-            /// <summary>
-            /// Одоогийн нэвтэрсэн хэрэглэгчийн Id-г авна.
-            /// </summary>
             int userId = authSvc.GetCurrentUser()!.Id;
 
-            /// <summary>
-            /// Reaction repository-д reaction хадгална.
-            /// </summary>
             reactRepo.ReactToThePost(userId, postId, reaction);
         }
     }

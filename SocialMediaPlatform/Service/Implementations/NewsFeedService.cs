@@ -77,43 +77,24 @@ namespace SocialMediaPlatform.Service.UseCases
         /// </summary>
         public void ScrollNewsFeed()
         {
-            /// <summary>
-            /// Пост байхгүй эсэхийг шалгана.
-            /// Хэрэв байхгүй бол newsfeed хоосон гэж харуулна.
-            /// </summary>
             if (postSvc.GetNumberOfPosts() == 0)
             {
                 Console.WriteLine("Newsfeed is empty");
                 return;
             }
-
-            /// <summary>
-            /// Бүх постуудыг CreatedAt-аар буурах дарааллаар iterate хийнэ.
-            /// Шинэ пост хамгийн түрүүнд харагдана.
-            /// </summary>
+            
             foreach (BasePost post in postSvc
                 .GetAllPosts()
                 .OrderByDescending(p => p.CreatedAt))
             {
                 bool isContinue = true;
 
-                /// <summary>
-                /// Постын үндсэн мэдээллийг харуулна:
-                /// - Owner username
-                /// - CreatedAt
-                /// - Reaction count
-                /// - Content
-                /// </summary>
                 Console.WriteLine(
                     $"\nOwner : {userSvc.GetById(post.OwnerId)!.Username}" +
                     $" , \nPosted at : {post.CreatedAt}" +
                     $" , \nReaction Count : {reactionSvc.GetReactionsByPostId(post.Id).Count}" +
                     $" , \nContent : {post.Content}");
 
-                /// <summary>
-                /// Тухайн пост дээр user interaction loop.
-                /// User дараах үйлдлийг хийж болно:
-                /// </summary>
                 while (isContinue)
                 {
                     int choice = Reader.ReadInt(
@@ -125,11 +106,6 @@ namespace SocialMediaPlatform.Service.UseCases
 
                     switch (choice)
                     {
-                        /// <summary>
-                        /// Reaction нэмэх.
-                        /// User reaction type сонгоно.
-                        /// Reaction service-д хадгална.
-                        /// </summary>
                         case 1:
                             int reactionChoice = Reader.ReadInt(
                                 "\n1) LIKE" +
@@ -145,10 +121,6 @@ namespace SocialMediaPlatform.Service.UseCases
                                 Reaction.IntToReaction[reactionChoice]);
                             break;
 
-                        /// <summary>
-                        /// Постын бүх комментуудыг харуулна.
-                        /// Comment service-ээс авч console дээр хэвлэнэ.
-                        /// </summary>
                         case 2:
                             List<Comment> comments =
                                 commentSvc.GetCommentsByPostId(post.Id);
@@ -162,11 +134,6 @@ namespace SocialMediaPlatform.Service.UseCases
                             }
                             break;
 
-                        /// <summary>
-                        /// Шинэ comment үүсгэнэ.
-                        /// Одоогийн хэрэглэгчийн Id ашиглана.
-                        /// Comment service-д хадгална.
-                        /// </summary>
                         case 3:
                             string content =
                                 Reader.ReadString("\nPlease write your comment\n");
@@ -180,16 +147,10 @@ namespace SocialMediaPlatform.Service.UseCases
                             Console.WriteLine("Successfully added comments");
                             break;
 
-                        /// <summary>
-                        /// Дараагийн пост руу шилжинэ.
-                        /// </summary>
                         case 4:
                             isContinue = false;
                             break;
 
-                        /// <summary>
-                        /// Newsfeed-ээс бүрэн гарна.
-                        /// </summary>
                         case 5:
                             return;
 
