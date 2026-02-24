@@ -11,7 +11,7 @@ namespace SocialMediaPlatform.Service.UseCases
     /// Посттой холбоотой use-case логик.
     /// Repository-оос пост өгөгдлийг авах болон үүсгэх үйлдлийг дамжуулна.
     /// </summary>
-    internal class PostService : IPostService
+    public class PostService : IPostService
     {
         /// <summary>
         /// Post repository.

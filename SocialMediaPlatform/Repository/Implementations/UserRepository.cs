@@ -6,7 +6,7 @@ using SocialMediaPlatform.Repository.Interfaces;
 
 namespace SocialMediaPlatform.Repository.Implementations
 {
-    internal class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly Dictionary<int, User> usersById = new();
         private readonly Dictionary<string, User> usersByUsername = new();

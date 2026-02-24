@@ -11,7 +11,7 @@ namespace SocialMediaPlatform.Service.UseCases
     /// NewsFeed service.
     /// Newsfeed харуулах, постуудыг scroll хийх, reaction болон comment үйлдлийг удирдана.
     /// </summary>
-    internal class NewsFeedService : INewsFeedService
+    public class NewsFeedService : INewsFeedService
     {
         /// <summary>
         /// Reaction service.

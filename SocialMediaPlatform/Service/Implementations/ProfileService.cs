@@ -9,7 +9,7 @@ namespace SocialMediaPlatform.Service.UseCases
     /// Profile service.
     /// Хэрэглэгчийн profile мэдээлэл болон тухайн хэрэглэгчийн постуудыг харуулах use-case логик.
     /// </summary>
-    internal class ProfileService
+    public class ProfileService
     {
         /// <summary>
         /// User service.

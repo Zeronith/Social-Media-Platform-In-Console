@@ -9,7 +9,7 @@ using SocialMediaPlatform.Repository.Interfaces;
 /// Хэрэглэгчийн мэдээлэлтэй ажиллах use-case логик.
 /// Repository layer руу дамжуулж user нэмэх, хайх үйлдлүүдийг гүйцэтгэнэ.
 /// </summary>
-internal class UserService : IUserService
+public class UserService : IUserService
 {
     /// <summary>
     /// User repository.

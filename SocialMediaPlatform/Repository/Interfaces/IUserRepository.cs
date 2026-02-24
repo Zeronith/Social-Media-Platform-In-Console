@@ -5,7 +5,7 @@ using SocialMediaPlatform.Domain;
 
 namespace SocialMediaPlatform.Repository.Interfaces
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
         public void AddUser(User user);
         public bool UsernameExists(string username);

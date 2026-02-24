@@ -6,7 +6,7 @@ using SocialMediaPlatform.Repository.Interfaces;
 
 namespace SocialMediaPlatform.Repository.Implementations
 {
-    internal class ReactionRepository : IReactionRepository
+    public class ReactionRepository : IReactionRepository
     {
         private readonly Dictionary<(int postId, int userId), ReactionType> reactions = new();
         private readonly Dictionary<int, Dictionary<int, ReactionType>> reactionsByPostId = new(); // postId -> (userId -> reaction)

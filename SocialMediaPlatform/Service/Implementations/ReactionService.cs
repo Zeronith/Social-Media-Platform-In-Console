@@ -10,7 +10,7 @@ namespace SocialMediaPlatform.Service.UseCases
     /// Пост дээр reaction нэмэх, reaction мэдээллийг авах use-case логик.
     /// Repository layer-тай харилцаж reaction өгөгдлийг удирдана.
     /// </summary>
-    internal class ReactionService : IReactionService
+    public class ReactionService : IReactionService
     {
         /// <summary>
         /// Reaction repository.

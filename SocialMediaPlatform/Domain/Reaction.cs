@@ -34,7 +34,7 @@ namespace SocialMediaPlatform.Domain
     /// Reaction entity.
     /// Хэрэглэгч тодорхой пост дээр reaction өгсөн мэдээллийг илэрхийлнэ.
     /// </summary>
-    internal class Reaction
+    public class Reaction
     {
         /// <summary>
         /// Integer → ReactionType mapping.

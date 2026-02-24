@@ -6,7 +6,7 @@ using SocialMediaPlatform.Helper;
 
 namespace SocialMediaPlatform.Domain
 {
-    internal abstract class BasePost
+    public abstract class BasePost
     {
         public BasePost( int UserId, string content)
         {

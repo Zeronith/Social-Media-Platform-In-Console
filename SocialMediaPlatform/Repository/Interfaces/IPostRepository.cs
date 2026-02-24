@@ -5,7 +5,7 @@ using SocialMediaPlatform.Domain;
 
 namespace SocialMediaPlatform.Repository.Interfaces
 {
-    internal interface IPostRepository
+    public interface IPostRepository
     {
         public int NumberOfPosts { get; }
         public List<BasePost> GetAllPosts();

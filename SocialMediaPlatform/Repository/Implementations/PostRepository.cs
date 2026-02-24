@@ -6,7 +6,7 @@ using SocialMediaPlatform.Repository.Interfaces;
 
 namespace SocialMediaPlatform.Repository.Implementations
 {
-    internal class PostRepository : IPostRepository
+    public class PostRepository : IPostRepository
     {
         private static readonly Dictionary<int, BasePost> postById = new();
         private readonly Dictionary<int, List<BasePost>> postByOwnerId = new();

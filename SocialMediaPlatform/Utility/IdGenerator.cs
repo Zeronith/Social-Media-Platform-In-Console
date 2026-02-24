@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialMediaPlatform.Helper
 {
-    internal class IdGenerator
+    public class IdGenerator
     {
         public static int _currentId = 0;
         public static int NextId()

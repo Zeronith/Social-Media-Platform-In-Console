@@ -2,7 +2,7 @@
 
 namespace SocialMediaPlatform.Domain
 {
-    internal class Comment
+    public class Comment
     {
         public Comment( int ownerId, int postId, string content)
         {

@@ -6,7 +6,7 @@ using SocialMediaPlatform.Repository.Interfaces;
 ///  Auth Service
 ///  Хэрэглэгч бүртгэл/нэвтрэлт , нэвтэрсэн байгаа хэрэглэгчийн төлвийг удирдана .
 /// </summary>
-internal class AuthService : IAuthService
+public class AuthService : IAuthService
 {
     private readonly IAuthRepository _authRepo;
     private readonly IUserService _userService;

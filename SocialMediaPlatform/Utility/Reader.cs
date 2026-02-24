@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialMediaPlatform.Helpers
 {
-    internal class Reader
+    public class Reader
     {
         public static string ReadString(string msg)
         {

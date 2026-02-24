@@ -5,7 +5,7 @@ using SocialMediaPlatform.Domain;
 
 namespace SocialMediaPlatform.Ports.ServicePorts
 {
-    internal interface IAuthService
+    public interface IAuthService
     {
         public bool SignUp(string username, string password, int age);
         public User? Login(string username, string password);

@@ -6,7 +6,7 @@ using SocialMediaPlatform.Service;
 
 namespace SocialMediaPlatform.Ports.ServicePorts
 {
-    internal interface IUserService
+    public interface IUserService
     {
         public void AddUser(User user);
         public User? GetById(int id);

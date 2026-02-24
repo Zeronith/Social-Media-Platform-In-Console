@@ -5,7 +5,7 @@ using SocialMediaPlatform.Domain;
 
 namespace SocialMediaPlatform.Repository.Interfaces
 {
-    internal interface IAuthRepository
+    public interface IAuthRepository
     {
         public User? CurrentUser { get; set; }
        

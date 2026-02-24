@@ -8,7 +8,7 @@ namespace SocialMediaPlatform.Service.UseCases
     /// Коммент үүсгэх, postId-оор комментуудыг авах логик.
     /// Дотоод хадгалалт: in-memory Dictionary.
     /// </summary>
-    internal class CommentService : ICommentService
+    public class CommentService : ICommentService
     {
         /// <summary>
         /// CommentById.

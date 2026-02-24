@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialMediaPlatform.Ports.ServicePorts
 {
-    internal interface INewsFeedService
+    public interface INewsFeedService
     {
         public void ScrollNewsFeed();
     }

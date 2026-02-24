@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialMediaPlatform.Domain
 {
-    internal class Post : BasePost
+    public class Post : BasePost
     {   public Post(int ownerId, string content) : base(ownerId, content){}
     }
 }

@@ -2,7 +2,7 @@
 
 namespace SocialMediaPlatform.Domain
 {
-    internal class User
+    public class User
     {
         public User( string username, string password, int age)
         {

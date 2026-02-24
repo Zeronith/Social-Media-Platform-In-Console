@@ -5,7 +5,7 @@ using SocialMediaPlatform.Domain;
 
 namespace SocialMediaPlatform.Ports.ServicePorts
 {
-    internal interface ICommentService
+    public interface ICommentService
     {
         public Comment? CreateComment(Comment newComment);
         public List<Comment> GetCommentsByPostId(int postId);

@@ -5,7 +5,7 @@ using SocialMediaPlatform.Domain;
 
 namespace SocialMediaPlatform.Ports.ServicePorts
 {
-    internal interface IReactionService
+    public interface IReactionService
     {
         public void ReactToThePost(int postId, ReactionType reaction);
         public ReactionType? GetReactionByPostIdAndUserId(int postId, int userId);

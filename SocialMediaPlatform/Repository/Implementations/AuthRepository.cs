@@ -6,7 +6,7 @@ using SocialMediaPlatform.Repository.Interfaces;
 
 namespace SocialMediaPlatform.Repository.Implementations
 {
-    internal class AuthRepository : IAuthRepository
+    public class AuthRepository : IAuthRepository
     {
         public User? CurrentUser { get; set; }
     }

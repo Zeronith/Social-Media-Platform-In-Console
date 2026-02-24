@@ -2,7 +2,7 @@
 
 namespace SocialMediaPlatform.Ports.ServicePorts
 {
-    internal interface IPostService
+    public interface IPostService
     {
         public List<BasePost> GetAllPosts();
         public BasePost? CreatePost(BasePost post);
