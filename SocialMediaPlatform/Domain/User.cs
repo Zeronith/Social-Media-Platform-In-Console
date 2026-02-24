@@ -1,6 +1,6 @@
 ﻿using SocialMediaPlatform.Helper;
 
-namespace SocialMediaPlatform.Models.Concrete
+namespace SocialMediaPlatform.Domain
 {
     internal class User
     {

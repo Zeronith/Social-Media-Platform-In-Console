@@ -1,15 +1,22 @@
-﻿using SocialMediaPlatform.Adapters.ServiceAdapters;
+﻿using SocialMediaPlatform.Domain;
 using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.Models.Concrete;
+using SocialMediaPlatform.Repository.Implementations;
+using SocialMediaPlatform.Repository.Interfaces;
+using SocialMediaPlatform.Service.UseCases;
 namespace SocialPlatform
 {
     class Program
     {
+        static UserRepository userRepo = new();
+        static PostRepository postRepo = new();
+        static ReactionRepository reactRepo = new();
+        static AuthRepository authRepo = new();
+
         static CommentService commentSvc = new();
-        static UserService userSvc = new();
-        static AuthService authSvc = new(userSvc);
-        static ReactionService reactionSvc = new(authSvc);
-        static PostService postSvc = new(userSvc , commentSvc , authSvc);
+        static UserService userSvc = new(userRepo);
+        static AuthService authSvc = new(userSvc , authRepo);
+        static ReactionService reactionSvc = new(authSvc, reactRepo);
+        static PostService postSvc = new(userSvc , commentSvc , authSvc , postRepo);
         static ProfileService profileSvc = new(userSvc, postSvc);
         static NewsFeedService newsFeedSvc = new(postSvc,commentSvc,authSvc,userSvc, reactionSvc);
 
@@ -92,7 +99,7 @@ namespace SocialPlatform
 
         private static void LogOut()
         {
-            authSvc.CurrentUser = null;
+            authSvc.SetCurrentUser(null);
         }
 
         private static void ScrollNewsFeed() {
@@ -100,7 +107,7 @@ namespace SocialPlatform
         }
         private static void GetMyProfile()
         {
-            profileSvc.GetMyProfile(authSvc.CurrentUser!.Id);
+            profileSvc.GetMyProfile(authSvc.GetCurrentUser()!.Id);
         }
 
         private static void CreatePost()
@@ -111,12 +118,12 @@ namespace SocialPlatform
                 case 1:
                     int durationInSeconds = Reader.ReadInt("Please enter reel duration :");
                     string reelContent = Reader.ReadString("Content: ");
-                    _ = postSvc.CreatePost(new Reel(authSvc.CurrentUser!.Id, reelContent, durationInSeconds));
+                    _ = postSvc.CreatePost(new Reel(authSvc.GetCurrentUser()!.Id, reelContent, durationInSeconds));
                     Console.WriteLine("Reel Successfully created");
                     break;
                 case 2:
                     string postContent = Reader.ReadString("Content:");
-                    _ = postSvc.CreatePost(new Post(authSvc.CurrentUser!.Id, postContent));
+                    _ = postSvc.CreatePost(new Post(authSvc.GetCurrentUser()!.Id, postContent));
                     Console.WriteLine("Post Successfully created");
                     break;
 

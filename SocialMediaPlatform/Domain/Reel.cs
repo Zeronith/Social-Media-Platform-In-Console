@@ -1,6 +1,4 @@
-﻿using SocialMediaPlatform.Models.Abstract;
-
-namespace SocialMediaPlatform.Models.Concrete
+﻿namespace SocialMediaPlatform.Domain
 {
     internal class Reel : BasePost
     {

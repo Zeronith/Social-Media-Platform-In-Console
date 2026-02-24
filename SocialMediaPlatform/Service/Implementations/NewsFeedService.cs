@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SocialMediaPlatform.Domain;
 using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.Models.Abstract;
-using SocialMediaPlatform.Models.Concrete;
 using SocialMediaPlatform.Ports.ServicePorts;
 
-namespace SocialMediaPlatform.Adapters.ServiceAdapters
+namespace SocialMediaPlatform.Service.UseCases
 {
     internal class NewsFeedService : INewsFeedService
     {
@@ -25,7 +24,7 @@ namespace SocialMediaPlatform.Adapters.ServiceAdapters
         }
         public void ScrollNewsFeed()
         {
-            if (postSvc.NumberOfPosts == 0)
+            if (postSvc.GetNumberOfPosts() == 0)
             {
                 Console.WriteLine("Newsfeed is empty like the enguunbayar's brain");
                 return;
@@ -54,7 +53,7 @@ namespace SocialMediaPlatform.Adapters.ServiceAdapters
                             break;
                         case 3:
                             string content = Reader.ReadString("\nPlease write your comment\n");
-                            _ = commentSvc.CreateComment(new Comment(authSvc.CurrentUser!.Id, post.Id, content));
+                            _ = commentSvc.CreateComment(new Comment(authSvc.GetCurrentUser()!.Id, post.Id, content));
                             Console.WriteLine("Successfully added comments");
                             break;
                         case 4:

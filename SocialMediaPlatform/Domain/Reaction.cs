@@ -1,6 +1,6 @@
 ﻿using SocialMediaPlatform.Helper;
 
-namespace SocialMediaPlatform.Models.Concrete
+namespace SocialMediaPlatform.Domain
 {
     public enum ReactionType {
         LIKE, LOVE, HAHA, CARE, WOW, SAD, ANGRY

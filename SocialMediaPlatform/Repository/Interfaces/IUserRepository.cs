@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SocialMediaPlatform.Models.Concrete;
-using SocialMediaPlatform.Service;
+using SocialMediaPlatform.Domain;
 
-namespace SocialMediaPlatform.Ports.ServicePorts
+namespace SocialMediaPlatform.Repository.Interfaces
 {
-    internal interface IUserService
+    internal interface IUserRepository
     {
         public void AddUser(User user);
-        public User? GetById(int id);
         public bool UsernameExists(string username);
         public User? GetByUsername(string username);
-
+        public User? GetById(int id);
     }
-
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SocialMediaPlatform.Models.Concrete;
+using SocialMediaPlatform.Domain;
 
 namespace SocialMediaPlatform.Ports.ServicePorts
 {

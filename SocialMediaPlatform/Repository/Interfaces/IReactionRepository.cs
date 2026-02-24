@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SocialMediaPlatform.Models.Concrete;
+using SocialMediaPlatform.Domain;
 
-namespace SocialMediaPlatform.Ports.ServicePorts
+namespace SocialMediaPlatform.Repository.Interfaces
 {
-    internal interface IReactionService
+    internal interface IReactionRepository
     {
-        public void ReactToThePost(int postId, ReactionType reaction);
+        public void ReactToThePost(int userId, int postId, ReactionType reaction);
         public ReactionType? GetReactionByPostIdAndUserId(int postId, int userId);
         public Dictionary<int, ReactionType> GetReactionsByPostId(int postId);
         public Dictionary<int, ReactionType> GetReactionsByUserId(int userId);
