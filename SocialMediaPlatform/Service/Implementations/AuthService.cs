@@ -28,7 +28,7 @@ public class AuthService : IAuthService
     /// <param name="password">Системд нэвтрэхэд зориулсан нууц үг </param>
     /// <param name="age">Нас нь 12-оос эрс их байх хэрэгтэй </param>
     /// <returns></returns>
-    public bool SignUp(string username, string password, int age)
+    public bool SignUp(string username, string password, byte age)
     {
         if (age < 13) return false;
         if (_userService.UsernameExists(username)) return false;

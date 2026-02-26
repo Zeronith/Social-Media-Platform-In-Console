@@ -4,7 +4,7 @@ namespace SocialMediaPlatform.Domain
 {
     public class User
     {
-        public User( string username, string password, int age)
+        public User( string username, string password, byte age)
         {
             Id = IdGenerator.NextId();
             Username = username;
@@ -15,7 +15,7 @@ namespace SocialMediaPlatform.Domain
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int Age { get; set; }
+        public byte Age { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

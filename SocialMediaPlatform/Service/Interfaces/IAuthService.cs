@@ -7,7 +7,7 @@ namespace SocialMediaPlatform.Ports.ServicePorts
 {
     public interface IAuthService
     {
-        public bool SignUp(string username, string password, int age);
+        public bool SignUp(string username, string password, byte age);
         public User? Login(string username, string password);
 
         public User? GetCurrentUser();
