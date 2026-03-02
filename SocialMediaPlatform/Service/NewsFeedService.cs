@@ -3,45 +3,44 @@ using System.Collections.Generic;
 using System.Text;
 using SocialMediaPlatform.Domain;
 using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.Ports.ServicePorts;
 
-namespace SocialMediaPlatform.Service.UseCases
+
+namespace SocialMediaPlatform.Service
 {
     /// <summary>
     /// NewsFeed service.
     /// Newsfeed харуулах, постуудыг scroll хийх, reaction болон comment үйлдлийг удирдана.
     /// </summary>
-    public class NewsFeedService : INewsFeedService
-    {
+    public class NewsFeedService   {
         /// <summary>
         /// Reaction service.
         /// Пост дээр reaction нэмэх болон reaction тоо авах.
         /// </summary>
-        private readonly IReactionService reactionSvc;
+        private readonly ReactionService reactionSvc;
 
         /// <summary>
         /// Post service.
         /// Бүх постуудыг авах, постын тоо авах.
         /// </summary>
-        private readonly IPostService postSvc;
+        private readonly PostService postSvc;
 
         /// <summary>
         /// Comment service.
         /// Коммент үүсгэх болон постын комментуудыг авах.
         /// </summary>
-        private readonly ICommentService commentSvc;
+        private readonly CommentService commentSvc;
 
         /// <summary>
         /// Auth service.
         /// Одоогийн нэвтэрсэн хэрэглэгчийг авах.
         /// </summary>
-        private readonly IAuthService authSvc;
+        private readonly AuthService authSvc;
 
         /// <summary>
         /// User service.
         /// User мэдээллийг Id-оор авах.
         /// </summary>
-        private readonly IUserService userSvc;
+        private readonly UserService userSvc;
 
         /// <summary>
         /// Constructor.
@@ -53,11 +52,12 @@ namespace SocialMediaPlatform.Service.UseCases
         /// <param name="userSvc">User service.</param>
         /// <param name="reactionSvc">Reaction service.</param>
         public NewsFeedService(
-            IPostService postSvc,
-            ICommentService commentSvc,
-            IAuthService authSvc,
-            IUserService userSvc,
-            IReactionService reactionSvc)
+            PostService postSvc,
+            CommentService commentSvc,
+            AuthService authSvc,
+            UserService userSvc,
+            ReactionService reactionSvc
+            )
         {
             this.reactionSvc = reactionSvc;
             this.postSvc = postSvc;
@@ -98,6 +98,7 @@ namespace SocialMediaPlatform.Service.UseCases
                 while (isContinue)
                 {
                     int choice = Reader.ReadInt(
+                        "\n0) Follow the poster" +
                         "\n1) React to the post" +
                         "\n2) See the comments" +
                         "\n3) Write comments" +
@@ -106,6 +107,8 @@ namespace SocialMediaPlatform.Service.UseCases
 
                     switch (choice)
                     {
+                        case 0: 
+
                         case 1:
                             int reactionChoice = Reader.ReadInt(
                                 "\n1) LIKE" +

@@ -1,14 +1,13 @@
 ﻿using SocialMediaPlatform.Domain;
-using SocialMediaPlatform.Ports.ServicePorts;
 
-namespace SocialMediaPlatform.Service.UseCases
+namespace SocialMediaPlatform.Service
 {
     /// <summary>
     /// Comment service.
     /// Коммент үүсгэх, postId-оор комментуудыг авах логик.
     /// Дотоод хадгалалт: in-memory Dictionary.
     /// </summary>
-    public class CommentService : ICommentService
+    public class CommentService 
     {
         /// <summary>
         /// CommentById.
@@ -16,6 +15,7 @@ namespace SocialMediaPlatform.Service.UseCases
         /// Давхардсан Id-г хурдан шалгах, comment-ийг id-оор шууд авах зориулалттай.
         /// </summary>
         private readonly Dictionary<int, Comment> commentById = new();
+
         /// <summary>
         /// CommentsByPostId.
         /// post.Id → List&lt;Comment&gt;.

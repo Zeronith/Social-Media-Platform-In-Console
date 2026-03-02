@@ -1,6 +1,4 @@
-﻿using SocialMediaPlatform.Service;
-using SocialMediaPlatform.Ports.ServicePorts;
-using SocialMediaPlatform.Domain;
+﻿using SocialMediaPlatform.Domain;
 using SocialMediaPlatform.Repository.Interfaces;
 
 
@@ -9,7 +7,7 @@ using SocialMediaPlatform.Repository.Interfaces;
 /// Хэрэглэгчийн мэдээлэлтэй ажиллах use-case логик.
 /// Repository layer руу дамжуулж user нэмэх, хайх үйлдлүүдийг гүйцэтгэнэ.
 /// </summary>
-public class UserService : IUserService
+public class UserService 
 {
     /// <summary>
     /// User repository.

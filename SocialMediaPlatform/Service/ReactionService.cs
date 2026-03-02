@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using SocialMediaPlatform.Domain;
-using SocialMediaPlatform.Ports.ServicePorts;
 using SocialMediaPlatform.Repository.Interfaces;
 
-namespace SocialMediaPlatform.Service.UseCases
+namespace SocialMediaPlatform.Service
 {
     /// <summary>
     /// Reaction service.
     /// Пост дээр reaction нэмэх, reaction мэдээллийг авах use-case логик.
     /// Repository layer-тай харилцаж reaction өгөгдлийг удирдана.
     /// </summary>
-    public class ReactionService : IReactionService
+    public class ReactionService 
     {
         /// <summary>
         /// Reaction repository.
@@ -22,7 +21,7 @@ namespace SocialMediaPlatform.Service.UseCases
         /// Auth service.
         /// Одоогийн нэвтэрсэн хэрэглэгчийн мэдээллийг авах зориулалттай.
         /// </summary>
-        private readonly IAuthService authSvc;
+        private readonly AuthService authSvc;
 
         /// <summary>
         /// Constructor.
@@ -30,7 +29,7 @@ namespace SocialMediaPlatform.Service.UseCases
         /// </summary>
         /// <param name="authSvc">Auth service.</param>
         /// <param name="reactRepo">Reaction repository.</param>
-        public ReactionService(IAuthService authSvc, IReactionRepository reactRepo)
+        public ReactionService(AuthService authSvc, IReactionRepository reactRepo)
         {
             this.reactRepo = reactRepo;
             this.authSvc = authSvc;

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SocialMediaPlatform.Ports.ServicePorts;
+﻿
 
-namespace SocialMediaPlatform.Service.UseCases
+namespace SocialMediaPlatform.Service
 {
     /// <summary>
     /// Profile service.
@@ -15,13 +12,13 @@ namespace SocialMediaPlatform.Service.UseCases
         /// User service.
         /// Хэрэглэгчийн мэдээллийг Id-аар авах зориулалттай.
         /// </summary>
-        private readonly IUserService userSvc;
+        private readonly UserService userSvc;
 
         /// <summary>
         /// Post service.
         /// Хэрэглэгчийн постуудыг авах зориулалттай.
         /// </summary>
-        private readonly IPostService postSvc;
+        private readonly PostService postSvc;
 
         /// <summary>
         /// Constructor.
@@ -29,7 +26,7 @@ namespace SocialMediaPlatform.Service.UseCases
         /// </summary>
         /// <param name="userSvc">User service.</param>
         /// <param name="postSvc">Post service.</param>
-        public ProfileService(IUserService userSvc, IPostService postSvc)
+        public ProfileService(UserService userSvc, PostService postSvc )
         {
             this.userSvc = userSvc;
             this.postSvc = postSvc;
@@ -52,6 +49,8 @@ namespace SocialMediaPlatform.Service.UseCases
             Console.WriteLine($"Username : {user.Username}");
             Console.WriteLine($"Age : {user.Age}");
             Console.WriteLine($"Joined at : {user.CreatedAt}");
+            //Console.WriteLine($"Followed by : {}");
+            //Console.WriteLine($"Following : {}");
 
             var posts = postSvc.GetPostsByUserId(id);
             foreach (var post in posts)

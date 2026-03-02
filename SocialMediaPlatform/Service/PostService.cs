@@ -1,17 +1,16 @@
 ﻿using Microsoft.VisualBasic;
 using SocialMediaPlatform.Domain;
-using SocialMediaPlatform.Helpers;
-using SocialMediaPlatform.Ports.ServicePorts;
+
 using SocialMediaPlatform.Repository.Interfaces;
 
-namespace SocialMediaPlatform.Service.UseCases
+namespace SocialMediaPlatform.Service
 {
     /// <summary>
     /// Post service.
     /// Посттой холбоотой use-case логик.
     /// Repository-оос пост өгөгдлийг авах болон үүсгэх үйлдлийг дамжуулна.
     /// </summary>
-    public class PostService : IPostService
+    public class PostService
     {
         /// <summary>
         /// Post repository.
